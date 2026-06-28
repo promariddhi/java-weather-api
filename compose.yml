@@ -9,7 +9,7 @@ services:
     environment:
       SPRING_DATA_REDIS_HOST : redis
       SPRING_DATA_REDIS_PORT : 6379
-      WEATHER_API_KEY : some_secret
+      WEATHER_API_KEY : ${WEATHER_API_KEY}
     depends_on:
       - redis
   redis:
