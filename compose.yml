@@ -1,0 +1,17 @@
+name: java-weather-api
+
+services:
+  api:
+    build: .
+    container_name: weather-api
+    ports: 
+      - "8000:8000"
+    environment:
+      SPRING_DATA_REDIS_HOST : redis
+      SPRING_DATA_REDIS_PORT : 6379
+      WEATHER_API_KEY : some_secret
+    depends_on:
+      - redis
+  redis:
+    image: redis:latest
+    container_name: weather-api-redis
