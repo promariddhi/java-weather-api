@@ -7,14 +7,35 @@ curl 'http://localhost:8000/weather?city=London&days=3'
 ```
 
 # Installation
-Run
+
+**Prerequisites:** Docker Desktop(or Docker Engine + Docker Compose)
+
+Clone Repository
 ```bash
-docker compose up
+git clone https://github.com/promariddhi/java-weather-api.git
+```
+
+```bash
+cd java-weather-api
+cp .env.example .env
+```
+
+Get your API key from [https://www.visualcrossing.com/weather-api/].
+Set the API key in `.env`.
+
+Start the application
+```bash
+docker compose up -d --build
 ```
 
 The API will be available at
 ```
 http://localhost:8000
+```
+
+To shut down
+```
+docker compose down
 ```
 
 # Tech Stack
@@ -28,7 +49,7 @@ http://localhost:8000
 * Docker
 * Github Actions
 
-## Features
+# Features
 - Retrieve weather data for any city
 - Cache responses using Redis
 - RESTful API built with Spring Boot
