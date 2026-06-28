@@ -5,7 +5,7 @@ services:
     build: .
     container_name: weather-api
     ports: 
-      - "8000:8000"
+      - "8000:8080"
     environment:
       SPRING_DATA_REDIS_HOST : redis
       SPRING_DATA_REDIS_PORT : 6379
